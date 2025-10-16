@@ -1,10 +1,7 @@
-import os
 import streamlit as st
 from openai import OpenAI
 
-# Load environment variables
-
-client = OpenAI(api_key=st.secrets("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Streamlit Page Config
 st.set_page_config(page_title="Vertual Assistance Chatbot", page_icon="💬", layout="centered")
