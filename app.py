@@ -31,7 +31,7 @@ if user_input:
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = client.chat.completions.create(
-                model="gpt-4o-mini",  # You can change to "gpt-4o" if available
+                model="gpt-4o",  # You can change to "gpt-4o" if available
                 messages=st.session_state.messages
             )
             reply = response.choices[0].message.content
