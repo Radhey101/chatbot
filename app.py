@@ -1,7 +1,11 @@
+import os
 import streamlit as st
+from dotenv import load_dotenv
 from openai import OpenAI
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+# Load environment variables
+load_dotenv()
+client = OpenAI(api_key=st.secrets("OPENAI_API_KEY"))
 
 # Streamlit Page Config
 st.set_page_config(page_title="Vertual Assistance Chatbot", page_icon="💬", layout="centered")
@@ -31,7 +35,7 @@ if user_input:
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = client.chat.completions.create(
-                model="gpt-4o",  # You can change to "gpt-4o" if available
+                model="gpt-4o-mini",  # You can change to "gpt-4o" if available
                 messages=st.session_state.messages
             )
             reply = response.choices[0].message.content
