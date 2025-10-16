@@ -1,10 +1,9 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from openai import OpenAI
 
 # Load environment variables
-load_dotenv()
+
 client = OpenAI(api_key=st.secrets("OPENAI_API_KEY"))
 
 # Streamlit Page Config
